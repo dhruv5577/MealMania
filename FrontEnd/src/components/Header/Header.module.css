@@ -1,0 +1,50 @@
+.header{
+  height: 40vw;
+  /* margin: 30px auto; */
+  background: url('/headerimg.png') no-repeat center center;
+  position: relative;
+}
+
+.headercontents{
+  /* color: white; */
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 1.5vw;
+  max-width: 50%;
+  bottom: 10%;
+  left: 6vw;
+  animation: slicer 3s;
+}
+
+.headercontents h2{
+  font-weight: 500;
+  color: white;
+  font-size: max(5vw,25px);
+}
+
+.headercontents p{ 
+  color: white;
+  font-size: 1vw
+}
+
+.headercontents button{
+  border: none;
+  color: #747474 ;
+  font-weight: 600;
+  padding: 1vw 2.5vw;
+  background-color: white;
+  font-size: max(1.2vw,15px);
+  border-radius: 50px;
+}
+
+
+@keyframes slicer{
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}

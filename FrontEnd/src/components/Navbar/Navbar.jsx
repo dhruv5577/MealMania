@@ -1,27 +1,33 @@
-import { assets } from "../../assets/assets"
-import './Navbar.css'
 
+import { useState } from "react";
+import { assets } from "../../assets/assets";
+import { FaSearch } from "react-icons/fa";
+import { FaShoppingCart } from "react-icons/fa";
+import classes from './Navbar.module.css';
 
 function Navbar() {
+  const [menu, setMenu] = useState("home");
+
   return (
-    <div className="navbar">
-      <img src={assets.logo} alt="Logo" className="logo"></img>
-      <ul className="navbar-menu">
-        <li>Home</li>
-        <li>Menu</li>
-        <li>About Us</li>
-        <li>Contact Us</li>
+    <div className={classes.navbar}>
+      <img src={assets.logo} alt="Logo" className={classes.logo} />
+      <ul className={classes.navbarMenu}>
+        <li onClick={() => setMenu("home")} className={menu === "home" ? classes.active : ""}>Home</li>
+        <li onClick={() => setMenu("menu")} className={menu === "menu" ? classes.active : ""}>Menu</li>
+        <li onClick={() => setMenu("about")} className={menu === "about" ? classes.active : ""}>About Us</li>
+        <li onClick={() => setMenu("contact")} className={menu === "contact" ? classes.active : ""}>Contact Us</li>
       </ul>
-      <div className="navbar">
-      <img src={assets.search}/>
-      <div className="navbar-search-icon">
-      <img src={assets.search}/>
-      <div className="dot"></div>
-      </div>
-      <button>Sign In</button>
+      <div className={classes.navbarRight}>
+        <FaSearch />
+        <div className={classes.navbarSearchIcon}>
+          <FaShoppingCart />
+          <div className={classes.dot}></div>
+        </div>
+        <button className={classes.button}>Sign In</button>
       </div>
     </div>
-  )
+  );
 }
 
-export default Navbar
+export default Navbar;
+
