@@ -1,0 +1,54 @@
+.footer{
+  color:#d9d9d9;
+  margin-top: 120px;
+  background-color: #323232;
+  padding: 25px 10vw;
+  padding-top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+  
+}
+
+.logo {
+  width: 100px;
+}
+
+.parts{
+  width: 100%;
+  display: grid;
+  grid-template-columns: 2fr 1.2fr 1.2fr;
+  gap: 100px;
+}
+
+
+.left ,.center , .right{
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 25px;
+}
+
+.left li, .center li, .right li{
+  margin-bottom: 15px;
+  cursor: pointer;
+  list-style: none;
+
+}
+
+
+
+
+.img{
+  width: 25px;
+  margin-right: 20px;
+}
+
+.center h2, .right h2{
+color: aliceblue;
+}
+
+
+
+

@@ -88,4 +88,28 @@ export const foodlist=[
     image:food1,
     category:"Pizza"
   },
+  {
+    _id:"6",
+    name:"swish roll",
+    price:90,
+    description:"A spicy blend of mashed vegetables served with buttery toasted buns, Pav Bhaji is a popular and flavorful Mumbai street food.",
+    image:food1,
+    category:"Rolls"
+  },
+  {
+    _id:"7",
+    name:"Bhel Puri",
+    price:90,
+    description:"A spicy blend of mashed vegetables served with buttery toasted buns, Pav Bhaji is a popular and flavorful Mumbai street food.",
+    image:food1,
+    category:"Salad"
+  },
+  {
+    _id:"8",
+    name:"Sev Puri",
+    price:90,
+    description:"A spicy blend of mashed vegetables served with buttery toasted buns, Pav Bhaji is a popular and flavorful Mumbai street food.",
+    image:food1,
+    category:"Salad"
+  },
 ]

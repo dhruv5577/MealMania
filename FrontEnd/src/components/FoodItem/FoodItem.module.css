@@ -77,4 +77,16 @@ font-weight: 400;
 
 }
 
+.itemcounter{
+
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 5px;
+  border-radius: 50px;
+  background-color: aliceblue;
+}
 
