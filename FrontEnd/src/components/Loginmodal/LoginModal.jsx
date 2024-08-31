@@ -13,7 +13,7 @@ export default function LoginModal({setShowLogin}) {
       <form className={classes.modalcontainer}>
         <div className={classes.titlemodal}>
           <h2> {currVal} </h2>
-          <ImCross onClick={()=>setShowLogin(false)} />
+          <ImCross className={classes.image} onClick={()=>setShowLogin(false)} />
         </div>
         <div className={classes.login_input}>
           {currVal==='Login'?<></>:<input type="text" placeholder='Name' required/>}
@@ -27,7 +27,6 @@ export default function LoginModal({setShowLogin}) {
           <p>Agreed to Terms and Condition</p>
         </div>
         {currVal==='Login' ? <p>Create a new Account? <span  onClick={()=>setCurrVal("Sign Up")}>Click Here</span></p>:<p>Already have Acoount? <span onClick={()=>setCurrVal("Login")}>Login Here</span></p> }
-        
         
       </form>
     </div>
