@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { createContext, useState } from "react";
 import { foodlist } from "../assets/assets";
 
@@ -24,11 +25,24 @@ const StoreContextProvider=(props)=>{
     
   } 
 
+  const cartAmount=()=>{
+    let total=0;
+    for(const i in cartItem){
+
+      if(cartItem[i]>0){
+        let info=foodlist.find((p)=>p._id===i);
+      total+=info.price*cartItem[i]
+      }      
+    }
+    return total;
+  }
+
 
 
 
   const contextValue={
     foodlist,
+    cartAmount,
     cartItem,
     setCartItem,
     addtocart,

@@ -90,3 +90,47 @@ font-weight: 400;
   background-color: aliceblue;
 }
 
+
+
+@media (max-width: 768px) {
+  .fooditem {
+    box-shadow: 0px 0px 5px #00000015; 
+  }
+
+  .foodimage {
+    width: 100%;
+    height: auto; 
+  }
+
+  .fooditeminfo {
+    padding: 15px; 
+  }
+
+  .itemnamerating p {
+    font-size: 1rem; 
+  }
+
+  .itemdesc {
+    font-size: 0.8rem; 
+  }
+
+  .itemprice {
+    font-size: 1.2rem; 
+  }
+
+  .add, .itemcounter {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .add {
+    bottom: 1rem;
+    right: 1rem;
+  }
+
+  .itemcounter {
+    bottom: 1rem;
+    right: 1rem;
+    padding: 0.5rem;
+  }
+}

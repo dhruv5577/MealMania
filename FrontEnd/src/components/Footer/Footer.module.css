@@ -50,5 +50,16 @@ color: aliceblue;
 }
 
 
+@media(max-width:750px){
+  .parts{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .copyright{
+    text-align: center;
+  }
+}
 
 

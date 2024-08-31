@@ -15,3 +15,19 @@
   row-gap: 50px;
 }
 
+@media (max-width: 1050px) {
+  .displaylist {
+    gap: 20px; /* Adjust gap for medium-sized screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .displaylist {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px; /* Further reduce gap for smaller screens */
+  }
+
+  .food h2 {
+    font-size: max(5vw, 20px); /* Adjust font size for smaller screens */
+  }
+}

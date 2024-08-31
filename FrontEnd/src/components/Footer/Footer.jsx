@@ -7,7 +7,7 @@ import { assets } from "../../assets/assets";
 
 function Footer() {
   return (
-    <div className={classes.footer}>
+    <div className={classes.footer} id='footer'>
       <div className={classes.parts}>
         <div className={classes.left}>
         <img src={assets.logo} alt="Logo" className={classes.logo} />

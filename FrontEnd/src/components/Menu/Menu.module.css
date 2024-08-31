@@ -55,3 +55,11 @@ font-size: max(1.4vw,15px);
 .listitem .active{
   border: 4px solid #49557e;
 }
+
+@media(max-width:1050px){
+  .menutext{
+    max-width: 100%;
+
+    font-size: 15px;
+  }
+}

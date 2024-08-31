@@ -1,0 +1,88 @@
+.container{
+  position: fixed; /* Change from absolute to fixed */
+  z-index: 1000; /* Ensure it's on top */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  display: grid;
+}
+
+.modalcontainer{
+  place-self: center;
+  width: max(25vw,400px);
+  color: gray;
+  display: flex;
+  background-color: white;
+  flex-direction: column;
+  gap: 25px;
+  padding: 30px 30px;
+  border-radius: 12px;
+  font-size: 12px;
+  animation: fadein 1s;
+  
+}
+
+.titlemodal{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: black;
+}
+
+.image{
+  width: 20px;
+  cursor: pointer;
+}
+
+.login_input{
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.login_input input{
+  outline: none;
+  border: 1px solid grey;
+  padding: 12px;
+  border-radius: 15px;
+}
+
+.modalcontainer button{
+  border: none;
+  padding: 12px;
+  border-radius: 10px;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+  background-color: #49557e;
+}
+
+.condition {
+  display: flex;
+  align-items: start;
+ gap: 8px;
+ margin-top: -15px;
+
+}
+
+.condition input{
+  margin-top: 2px;
+}
+
+.modalcontainer p span{
+  color: #49557e;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+@keyframes fadein{
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
