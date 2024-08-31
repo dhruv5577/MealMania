@@ -23,10 +23,10 @@ export default function Cart() {
         </div>
         <br/>
         <hr/>
-        {foodlist.map((item,index)=>{
+        {foodlist.map((item)=>{
           if(cartItem[item._id]>0){
             return (
-              <div>
+              <div key={item._id}>
               <div className={classes.itemstitle}>
                 <img src={item.image}></img>
                 <p>{item.name}</p>
