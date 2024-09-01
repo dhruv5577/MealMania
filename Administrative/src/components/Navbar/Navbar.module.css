@@ -1,0 +1,15 @@
+.navbar{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 5%;
+}
+
+.navbar .image{
+  width: 60px;
+}
+
+.navbar h3{
+  
+  color: #49557e;
+}

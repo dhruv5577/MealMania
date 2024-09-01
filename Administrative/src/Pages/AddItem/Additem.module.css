@@ -1,0 +1,50 @@
+.additem {
+  width: 100%;
+  margin-left: max(5vw, 100px);
+  margin-top: 60px;
+  color: #4a4c53;
+  font-size: 20px;
+}
+
+.formaction{
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.additem form {
+  gap: 20px; /* Add the gap between form elements */
+}
+
+.addimg img{
+  width: 120px;
+}
+
+.addprod,.adddesc{
+  width: max(50%,300px);
+}
+
+.addprod input,.adddesc textarea{
+    padding: 12px;
+}
+
+
+.addcategory{
+  display:flex ;
+  gap: 35px;
+}
+
+
+.addcategory input,.addcategory select{
+  max-width: 120px;
+  padding: 10px;
+}
+
+.addbtn{
+  max-width: 120px;
+  border: none;
+  padding: 12px;
+  background-color: #a3a3b0;
+  color: black;
+  cursor: pointer;
+}
