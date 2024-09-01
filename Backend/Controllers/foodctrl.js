@@ -4,22 +4,24 @@ import fs from 'fs'
 const foodctrl = {
   //* Add Food Item
   addfood: async (req, res) => {
-    let image_file = `${req.file.filename}`;
-
-    const newfood = new foodModel({
-      name: req.body.name,
-      description: req.body.description,
-      price: req.body.price,
-      category: req.body.category,
-      image: image_file
-    });
+    // if (!req.file) {
+    //   return res.status(400).json({ success: false, message: 'Image upload failed' });
+    // }
 
     try {
+      const image_file = `${req.file.filename}`;
+      const newfood = new foodModel({
+        name: req.body.name,
+        description: req.body.description,
+        price: req.body.price,
+        category: req.body.category,
+        image: image_file
+      });
+
       await newfood.save();
       res.json({ success: true, message: "Food has been added" });
-      
     } catch (error) {
-      //console.error(error);
+      console.error("Error in addfood controller:", error);
       res.status(500).json({ success: false, message: "An error has occurred" });
     }
   },

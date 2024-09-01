@@ -23,16 +23,22 @@
 import express from 'express';
 import multer from 'multer';
 import foodctrl from '../Controllers/foodctrl.js';
+import path from 'path'
 
 const FoodRouter = express.Router();
 
 // Multer storage configuration
+
+
 const storage = multer.diskStorage({
-  destination: "uploads",
-  filename: (req, file, cb) => {
-    cb(null, `${Date.now()}_${file.originalname}`);
+  destination: function (req, file, cb) {
+    cb(null, 'uploads/');
+  },
+  filename: function (req, file, cb) {
+    cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname));
   }
 });
+
 
 const upload = multer({ storage });
 
