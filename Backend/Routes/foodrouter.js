@@ -36,11 +36,14 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage });
 
-// Route to add a new food item
+//*Route to add a new food item
 FoodRouter.post('/api/v1/food/add', upload.single("image"), foodctrl.addfood);
 
-//Get All foods
+//*Get All foods
 FoodRouter.get('/api/v1/food/lists', foodctrl.getallfoods);
+
+//*Remove fooditem
+FoodRouter.post('/api/v1/food/removeitem', foodctrl.removeitem);
 
 
 export default FoodRouter;

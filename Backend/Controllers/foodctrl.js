@@ -24,10 +24,38 @@ const foodctrl = {
     }
   },
 
+
+
   getallfoods:async(req,res)=>{
     try {
       const foods=await foodModel.find({});
       res.json({success:true,data:foods})
+    } catch (error) { 
+        console.log(error);
+        res.json({success:false,message:"error has been occured"})
+    }
+  },
+
+  removeitem:async(req,res)=>{
+    try {
+      
+      const food = await foodModel.findById(req.body.id);
+
+      if (!food) {
+        return res.status(404).json({ success: false, message: "Food item not found" });
+      }
+
+      
+      fs.unlink(`uploads/${food.image}`, (err) => {
+        if (err) {
+          console.log(err);
+          return res.status(500).json({ success: false, message: "Failed to delete image file" });
+        }
+      });
+
+      
+      await foodModel.findByIdAndDelete(req.body.id);
+      res.json({ success: true, message: "Item has been removed successfully" });
     } catch (error) { 
         console.log(error);
         res.json({success:false,message:"error has been occured"})
