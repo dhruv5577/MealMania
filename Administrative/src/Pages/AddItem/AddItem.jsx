@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { assets } from '../../assets/assets';
 import classes from './Additem.module.css';
+import { toast } from 'react-toastify';
 
 export default function AddItem() {
   const [uploadImg, setUploadImg] = useState(false);
@@ -43,12 +44,14 @@ export default function AddItem() {
           category: "salad"
         });
         setUploadImg(false);
+        toast.success("Food item added successfully!");
       } else {
         console.error("Error:", result.message);
       }
 
     } catch (error) {
       console.error("There was an error submitting the form:", error.message);
+      toast.error("Failed to add food item.");
     }
   };
 
@@ -91,7 +94,7 @@ export default function AddItem() {
           </div>
           <div className={`${classes.addprice} ${classes.formaction}`}>
             <p>Product Price</p>
-            <input onChange={onhanldechange} value={data.price} type="number" name="price" placeholder="100" required />
+            <input onChange={onhanldechange} value={data.price} type="number" name="price" placeholder="₹100" required />
           </div>
         </div>
         <button type="submit" className={classes.addbtn}>
