@@ -123,6 +123,44 @@
 }
 
 
+.navbarprofile{
+  position: relative;
+}
+.dropdown{
+  position: absolute;
+  display: none;
+  right: 0;
+  z-index: 1;
+}
+
+.navbarprofile:hover .dropdown{
+  display: flex;
+  flex-direction: column;
+  gap: 8px  ;
+  background-color: #fff2ef;
+  padding: 10px 10px;
+  border-radius: 5px;
+  border: 1px solid #49557e;
+  outline:2px solid white;
+  list-style: none;
+
+}
+.dropdown li:hover{
+  color:#49557e
+}
+
+.droplogo{
+  width: 15px;
+}
+
+.dropdown li{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+
 @media(max-width:1050px){
   .logo{
     width: 150px;

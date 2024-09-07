@@ -12,12 +12,12 @@ const FoodItem = ({id,name,price,description,image}) => {
 
   //const [itemcnt,setItemcnt]=useState(0);
   // const {cartItem,addtocart,removeincart}=useContext(StoreContext)
-  const {cartItem,addtocart,removeincart}=useContext(StoreContext)
+  const {cartItem,addtocart,removeincart,URI}=useContext(StoreContext)
 
   return (
     <div className={classes.fooditem}>
       <div className={classes.imagecontainer}>
-        <img className={classes.foodimage} src={image} alt="" />
+        <img className={classes.foodimage} src={URI+"/images/"+image} alt="" />
         {
           !cartItem[id]?<IoMdAdd className={classes.add} onClick={()=>addtocart(id)} />
           :

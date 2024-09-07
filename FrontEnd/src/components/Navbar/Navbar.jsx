@@ -1,16 +1,26 @@
-import {Link} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
 import { useContext, useState } from "react";
 import { assets } from "../../assets/assets";
 import { FaSearch } from "react-icons/fa";
 import { FaShoppingCart } from "react-icons/fa";
 import classes from './Navbar.module.css';
 import { StoreContext } from '../../Store/StoreContext';
+import { BiLogOut } from "react-icons/bi";
+import { FaRegUserCircle } from "react-icons/fa";
+
 
 
 // eslint-disable-next-line react/prop-types
 function Navbar({setShowLogin}) {
   const [menu, setMenu] = useState("home");
-  const {cartAmount}=useContext(StoreContext)
+  const {cartAmount,token,setToken}=useContext(StoreContext)
+  const navigate=useNavigate()
+
+  const logout=()=>{
+    localStorage.removeItem('token');
+    setToken("");
+    navigate("/");
+  }
 
   return (
     <div className={classes.navbar}>
@@ -27,7 +37,19 @@ function Navbar({setShowLogin}) {
           <Link to='/cart'><FaShoppingCart /></Link>
           <div className={cartAmount()===0 ? "":classes.dot}></div>
         </div>
+        {!token?
         <button onClick={()=>setShowLogin(true)} className={classes.button}>Sign In</button>
+        :
+          <div className={classes.navbarprofile}>
+            <FaRegUserCircle />
+            <ul className={classes.dropdown}>
+              <li><FaShoppingCart className={classes.droplogo}/><p>Orders</p></li>
+              <hr />
+              <li onClick={logout}><BiLogOut className={classes.droplogo} /><p>LogOut</p></li>
+            </ul>
+            </div>
+        }
+        
       </div>
     </div>
   );

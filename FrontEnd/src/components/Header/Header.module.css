@@ -1,5 +1,6 @@
 .header {
   height: 40vw;
+  border-radius: 40px;
   background: url('/headerimg.png') no-repeat center center;
   background-size: cover; /* Ensures the image covers the entire area */
   position: relative;

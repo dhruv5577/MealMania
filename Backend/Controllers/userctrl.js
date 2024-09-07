@@ -43,9 +43,29 @@ const userctrl={
   },
 
   //Login user
-//   login:async(req,res)=>{
+  login:async(req,res)=>{
+    const {email,password}=req.body;
+    try {
+      const user=await userModel.findOne({email});
 
-//   }
+      if(!user){
+        return res.json({success:false,message:"User is not exists"})
+      }
+
+      const pass=await bcrypt.compare(password,user.password);
+      
+      if(!pass){
+        return res.json({success:false,message:"User Credential is not valid"})
+      }
+
+      const token = JWT.sign({ _id: user._id }, process.env.JWT_SECRET_KEY);
+      res.json({ success: true, token });
+
+    } catch (error) {
+        console.log(error);
+        return res.json({success:false,message:error})
+    }
+  }
 }
 
 export default userctrl;
