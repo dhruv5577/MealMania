@@ -2,6 +2,8 @@ import express from 'express';
 import cors from 'cors';
 import { connectDB } from './DBConfig/dbconfig.js';
 import FoodRouter from './Routes/foodrouter.js';
+import 'dotenv/config.js'
+import UserRouter from './Routes/userrouter.js';
 
 const app = express();
 const port = 8080;
@@ -16,6 +18,7 @@ app.use(cors());
 // Routes
 app.use('/', FoodRouter); 
 app.use('/images',express.static('uploads'))
+app.use('/',UserRouter);
 
 // Start the server
 app.listen(port, () => {

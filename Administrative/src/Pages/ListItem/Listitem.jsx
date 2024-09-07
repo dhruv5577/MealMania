@@ -25,6 +25,11 @@ export default function Listitem() {
     const response=await axios.post('http://localhost:8080/api/v1/food/removeitem',{id:foodid});
 
     await fetchalldata();
+    if(response.data.success){
+      toast.success(response.data.message)
+    }else{
+      toast.error(response.data.message)
+    }
   }
 
   return (
