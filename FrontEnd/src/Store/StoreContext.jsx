@@ -13,13 +13,17 @@ const StoreContextProvider=(props)=>{
 
   const[foodlist,setFoodList]=useState([])
 
-  const addtocart=(itemId)=>{
+  const addtocart=async(itemId)=>{
     if(!cartItem[itemId]){
       setCartItem((prev)=>({...prev,[itemId]:1}))
     }
     else{
       setCartItem((prev)=>({...prev,[itemId]:prev[itemId]+1}))
     }
+     if(token){
+       await axios.post(URI+'/api/v1/cart/addtocart',{itemId},{headers:{token}})
+    
+  }
   } 
 
 
@@ -42,11 +46,16 @@ const StoreContextProvider=(props)=>{
     return total;
   }
 
-  const fetchfood=async()=>{
-    const response=await axios.get(URI+"/api/v1/food/lists");
-
-    setFoodList(response.data.data)
-  }
+  const fetchfood = async () => {
+    try {
+      const response = await axios.get(URI + "/api/v1/food/lists");
+      setFoodList(response.data.data || []);
+    } catch (error) {
+      console.error("Error fetching food list:", error);
+      setFoodList([]); // Fallback to empty array on error
+    }
+  };
+  
 
   useEffect(()=>{
     
